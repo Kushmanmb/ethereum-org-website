@@ -34,7 +34,7 @@ export default function createLazyComponent<P = Record<string, unknown>>(
 ) {
   return dynamic(loader, {
     ssr: false,
-    ...options,
     loading: Loading,
+    ...options,
   })
 }

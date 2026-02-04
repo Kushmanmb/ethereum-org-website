@@ -70,7 +70,7 @@ export async function fetchMetric<TResponse = unknown, TValue = number>(
       return { value, timestamp: Date.now() }
     }
 
-    // For other types, assume they're already in the correct format
+    // For other types, return with timestamp
     return { value: value as number, timestamp: Date.now() }
   } catch (error) {
     console.error(`Error fetching ${metricName}:`, error)

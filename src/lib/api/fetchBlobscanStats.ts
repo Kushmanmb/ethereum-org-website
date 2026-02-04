@@ -1,7 +1,5 @@
 import type { ValueOrError } from "../types"
 
-import { fetchMetric } from "./fetchMetricUtils"
-
 type BlobscanOverallStats = {
   avgBlobAsCalldataFee: number
   avgBlobFee: number
@@ -30,10 +28,11 @@ type BlobscanOverallStats = {
 export const fetchBlobscanStats = async (): Promise<
   ValueOrError<BlobscanOverallStats>
 > => {
-  return fetchMetric<[BlobscanOverallStats], BlobscanOverallStats>({
-    url: "https://api.blobscan.com/stats/overall",
-    metricName: "Blobscan stats",
-    extractValue: ([json]) => json,
-    errorMessage: "Response for fetchBlobscanStats not okay",
-  })
+  const response = await fetch("https://api.blobscan.com/stats/overall")
+
+  if (!response.ok) return { error: "Response for fetchBlobscanStats not okay" }
+
+  const [json]: [BlobscanOverallStats] = await response.json()
+
+  return { value: json, timestamp: Date.now() }
 }
