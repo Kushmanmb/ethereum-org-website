@@ -13,6 +13,7 @@ import { CodeExample } from "@/lib/interfaces"
 
 import ActivityStats from "@/components/ActivityStats"
 import FusakaBanner from "@/components/Banners/FusakaBanner"
+import OwnershipBanner from "@/components/Banners/OwnershipBanner"
 import { ChevronNext } from "@/components/Chevron"
 import HomeHero from "@/components/Hero/HomeHero"
 import BentoCard from "@/components/Homepage/BentoCard"
@@ -437,6 +438,7 @@ const Page = async ({ params }: { params: PageParams }) => {
     <>
       <IndexPageJsonLD locale={locale} />
       <MainArticle className="flex w-full flex-col items-center" dir={dir}>
+        <OwnershipBanner />
         <FusakaBanner />
         <HomeHero image={RoadmapFusakaImage} alt="Fusaka Hero" />
         <div className="w-full space-y-32 px-4 md:mx-6 lg:space-y-48">
