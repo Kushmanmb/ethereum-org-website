@@ -20,6 +20,34 @@ Need a more basic primer first? Check out [ethereum.org/learn](/learn/) or [ethe
 - [Write your First Smart Contract](https://kauri.io/article/124b7db1d0cf4f47b414f8b13c9d66e2/remix-ide-your-first-smart-contract)
 - [Learn How to Compile and Deploy Solidity](https://kauri.io/article/973c5f54c4434bb1b0160cff8c695369/understanding-smart-contract-compilation-and-deployment)
 
+## Prerequisites {#prerequisites}
+
+**Installing Rust**
+
+Before you can start developing Ethereum applications with Rust, you need to install the Rust toolchain. The recommended way to install Rust is using `rustup`, which installs and manages Rust versions and associated tools.
+
+To install Rust on macOS, Linux, or another Unix-like OS, run the following command in your terminal:
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+For Windows users, download and run [rustup-init.exe](https://rustup.rs/).
+
+After installation, verify that Rust is installed correctly:
+
+```sh
+rustc --version
+```
+
+To update Rust to the latest version:
+
+```sh
+rustup update
+```
+
+For more detailed installation instructions and troubleshooting, visit the [official Rust installation guide](https://www.rust-lang.org/tools/install).
+
 ## Beginner articles {#beginner-articles}
 
 - [The Rust Ethereum Client](https://openethereum.github.io/) \* **Note that OpenEthereum [has been deprecated](https://medium.com/openethereum/gnosis-joins-erigon-formerly-turbo-geth-to-release-next-gen-ethereum-client-c6708dd06dd) and is no longer being maintained.** Use it with caution and preferably switch to another client implementation.
