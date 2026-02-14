@@ -125,5 +125,8 @@
   "page-index-fusaka-description": "สำหรับเครือข่าย Ethereum ที่เร็วขึ้น ปลอดภัยขึ้น และใช้งานง่ายขึ้น |",
   "page-index-fusaka-read-more": "อ่านเพิ่มเติม",
   "page-index-fusaka-going-live-in": "จะเปิดใช้งาน<br></br> ใน",
-  "page-index-fusaka-live-now": "กำลังใช้งานอยู่"
+  "page-index-fusaka-live-now": "กำลังใช้งานอยู่",
+  "page-index-ownership-banner-title": "New: Ethereum History & Ownership",
+  "page-index-ownership-banner-description": "Learn about Ethereum's history, who created it, when it launched, and who controls it today.",
+  "page-index-ownership-banner-read-more": "Read more"
 }
