@@ -3,7 +3,7 @@ import { getLocale, getTranslations } from "next-intl/server"
 import { LinkBox, LinkOverlay } from "@/components/ui/link-box"
 
 const OwnershipBanner = async () => {
-  const locale = getLocale()
+  const locale = await getLocale()
   const t = await getTranslations({ locale, namespace: "page-index" })
 
   return (
