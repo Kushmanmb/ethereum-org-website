@@ -12,6 +12,8 @@ jobs:
   copilot-setup-guide:
     name: GitHub Copilot Setup Instructions
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Display Setup Instructions
         run: |
