@@ -7,11 +7,6 @@ name: GitHub Copilot Setup Guide
 
 on:
   workflow_dispatch:
-    inputs:
-      show_setup_guide:
-        description: 'Display Copilot setup instructions'
-        required: false
-        default: 'true'
 
 jobs:
   copilot-setup-guide:
@@ -178,7 +173,7 @@ jobs:
           - Repository README: /README.md
           - Code Conventions: /docs/code-conventions.md
           - Best Practices: /docs/best-practices.md
-          - CLAUDE.md: Project context for AI assistants
+          - /CLAUDE.md: Project context for AI assistants
           - GitHub Copilot Docs: https://docs.github.com/copilot
           
           🎉 Ready to Contribute!
