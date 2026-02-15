@@ -1,0 +1,204 @@
+# GitHub Copilot Setup Steps for ethereum.org Contributors
+#
+# This workflow provides guidance for setting up and using GitHub Copilot
+# when contributing to the ethereum.org website repository.
+
+name: GitHub Copilot Setup Guide
+
+on:
+  workflow_dispatch:
+    inputs:
+      show_setup_guide:
+        description: 'Display Copilot setup instructions'
+        required: false
+        default: 'true'
+
+jobs:
+  copilot-setup-guide:
+    name: GitHub Copilot Setup Instructions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display Setup Instructions
+        run: |
+          cat << 'EOF'
+          ╔══════════════════════════════════════════════════════════════════════════════╗
+          ║                                                                              ║
+          ║              GitHub Copilot Setup Guide for ethereum.org                    ║
+          ║                                                                              ║
+          ╚══════════════════════════════════════════════════════════════════════════════╝
+
+          📋 Prerequisites
+          ================
+          
+          1. GitHub Copilot Subscription
+             - Personal account: https://github.com/settings/copilot
+             - Organization account: Check with your org admin
+          
+          2. Supported IDE/Editor
+             - VS Code (Recommended): Install "GitHub Copilot" extension
+             - JetBrains IDEs: Install "GitHub Copilot" plugin
+             - Neovim: Install copilot.vim plugin
+          
+          🚀 Quick Start
+          ===============
+          
+          1. Install GitHub Copilot Extension
+             - VS Code: Search for "GitHub Copilot" in Extensions Marketplace
+             - Command Palette (Ctrl/Cmd + Shift + P) → "Install Extensions"
+          
+          2. Sign in to GitHub
+             - Command Palette → "GitHub Copilot: Sign In"
+             - Authorize the extension when prompted
+          
+          3. Verify Installation
+             - Look for the Copilot icon in your status bar
+             - Status should show "Ready"
+          
+          📚 Repository-Specific Context
+          ===============================
+          
+          This is the ethereum.org website - a Next.js 14+ application with:
+          
+          - **Framework**: Next.js App Router
+          - **Language**: TypeScript 5.5+
+          - **Styling**: Tailwind CSS 3.4+
+          - **Components**: React 18 with Radix UI & shadcn/ui
+          - **Package Manager**: pnpm (required)
+          - **Internationalization**: next-intl (60+ languages)
+          
+          🎯 Key Development Commands
+          ============================
+          
+          # Setup environment
+          nvm use                    # Use correct Node.js version
+          corepack enable            # Enable package manager
+          pnpm install              # Install dependencies
+          
+          # Development
+          pnpm dev                  # Start dev server (localhost:3000)
+          pnpm build                # Build for production
+          pnpm lint                 # Run ESLint
+          pnpm lint:fix            # Auto-fix linting issues
+          pnpm format              # Format with Prettier
+          
+          # Testing & Quality
+          pnpm storybook           # Start Storybook
+          pnpm test:e2e            # Run Playwright E2E tests
+          
+          📝 Code Conventions with Copilot
+          =================================
+          
+          When using Copilot, follow these conventions:
+          
+          1. **File Naming**
+             - Components: PascalCase (e.g., ActionCard.tsx)
+             - Utilities: camelCase (e.g., cn.ts, relativePath.ts)
+             - Pages: kebab-case (Next.js conventions)
+          
+          2. **TypeScript**
+             - Use `interface` for object shapes
+             - Use `type` for unions/intersections
+             - Avoid `any` - use `unknown` instead (ESLint enforced)
+             - Import types from `@/lib/types`
+          
+          3. **Styling**
+             - Primary: Tailwind CSS utility classes
+             - Component variants: class-variance-authority (cva)
+             - Dynamic classes: cn() utility (clsx + tailwind-merge)
+             - Mobile-first responsive design
+          
+          4. **Components**
+             - Prefer Server Components (App Router)
+             - Use Radix UI primitives for accessibility
+             - Export from appropriate index files
+             - Add Storybook stories for new components (*.stories.tsx)
+          
+          5. **Internationalization**
+             - All user-facing text must be translatable
+             - Use `getTranslations()` and `getLocale()`
+             - Translation files in `src/intl/[locale]/`
+          
+          💡 Copilot Best Practices for This Repo
+          ========================================
+          
+          1. **Context Comments**
+             Write clear comments before complex code:
+             // Create a responsive navigation component with mobile menu
+             // that supports 60+ languages and uses Radix UI for accessibility
+          
+          2. **Type Hints**
+             Leverage TypeScript types for better suggestions:
+             interface NavigationProps {
+               locale: string;
+               items: NavItem[];
+             }
+          
+          3. **Import Patterns**
+             Copilot learns from existing imports:
+             import { cn } from "@/lib/utils/cn"
+             import { Button } from "@/components/ui/Button"
+          
+          4. **Testing**
+             Use Storybook stories as documentation:
+             export const Default: Story = {
+               args: { variant: "primary", size: "md" }
+             }
+          
+          5. **Accessibility**
+             Always include ARIA labels and semantic HTML:
+             <button aria-label="Open navigation menu" />
+          
+          🔧 Troubleshooting
+          ===================
+          
+          Issue: Copilot not providing suggestions
+          ----------------------------------------
+          - Check status bar icon - should show "Ready"
+          - Verify GitHub authentication: Command Palette → "GitHub: Sign Out" then sign back in
+          - Restart your IDE
+          - Check network/firewall settings
+          
+          Issue: Suggestions don't match project style
+          ----------------------------------------------
+          - Copilot learns from the files you have open
+          - Keep relevant files open in your editor
+          - Review and accept only appropriate suggestions
+          - Refer to docs/best-practices.md and CLAUDE.md
+          
+          Issue: TypeScript errors in suggestions
+          ----------------------------------------
+          - Ensure you've run `pnpm install`
+          - Check `tsconfig.json` is properly configured
+          - Copilot uses your local TypeScript server
+          
+          📖 Additional Resources
+          =======================
+          
+          - ethereum.org Contributing Guide: https://ethereum.org/contributing/
+          - Repository README: /README.md
+          - Code Conventions: /docs/code-conventions.md
+          - Best Practices: /docs/best-practices.md
+          - CLAUDE.md: Project context for AI assistants
+          - GitHub Copilot Docs: https://docs.github.com/copilot
+          
+          🎉 Ready to Contribute!
+          ========================
+          
+          You're all set! Start by:
+          1. Creating a new branch: git checkout -b feature/your-feature
+          2. Opening relevant files in your editor
+          3. Let Copilot assist you while following our conventions
+          4. Run tests before submitting: pnpm lint && pnpm build
+          
+          Happy coding with Copilot! 🚀
+          
+          EOF
+      
+      - name: Repository Setup Check
+        run: |
+          echo "✅ Workflow executed successfully"
+          echo "📝 Review the setup instructions above"
+          echo "🔗 For more details, see:"
+          echo "   - README.md"
+          echo "   - CONTRIBUTING.md"
+          echo "   - docs/best-practices.md"
