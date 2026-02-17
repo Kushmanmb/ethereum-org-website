@@ -21,7 +21,7 @@ jobs:
     # Use self-hosted runners if available and requested, otherwise use GitHub-hosted
     # To use self-hosted runners, set up runners with labels: [self-hosted, ethereum-org, nodejs]
     # See docs/self-hosted-runners.md for setup instructions
-    runs-on: ${{ (github.event.inputs.use_self_hosted == 'true' && 'self-hosted, ethereum-org, nodejs') || 'ubuntu-latest' }}
+    runs-on: ${{ github.event.inputs.use_self_hosted == 'true' && fromJSON('["self-hosted", "ethereum-org", "nodejs"]') || 'ubuntu-latest' }}
 
     strategy:
       matrix:
