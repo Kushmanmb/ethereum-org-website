@@ -16,10 +16,15 @@ on:
           - ethereum-org
           - fast-build
 
+permissions:
+  contents: read
+
 jobs:
   # Check if self-hosted runners are available
   check-runner-availability:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       has-self-hosted: ${{ steps.check.outputs.has-self-hosted }}
     steps:
@@ -38,6 +43,8 @@ jobs:
     # Only run if self-hosted runners are configured
     if: needs.check-runner-availability.outputs.has-self-hosted == 'true'
     runs-on: [self-hosted, ethereum-org]
+    permissions:
+      contents: read
     
     steps:
       - name: Check disk space
@@ -135,6 +142,8 @@ jobs:
     needs: check-runner-availability
     if: needs.check-runner-availability.outputs.has-self-hosted == 'true'
     runs-on: [self-hosted, ethereum-org]
+    permissions:
+      contents: read
     
     steps:
       - name: Clean npm cache
@@ -166,6 +175,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [check-runner-availability, health-check, cleanup]
     if: always()
+    permissions:
+      contents: read
     
     steps:
       - name: Health check summary
