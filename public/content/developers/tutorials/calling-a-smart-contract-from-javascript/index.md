@@ -155,7 +155,9 @@ const { ethers } = require("ethers")
 const provider = new ethers.providers.JsonRpcProvider("http://localhost:8545")
 
 // Create a signer (for transactions that modify state)
-const privateKey = "YOUR_PRIVATE_KEY"
+// WARNING: Never hardcode private keys in production!
+// Use environment variables or secure key management systems instead
+const privateKey = process.env.PRIVATE_KEY
 const signer = new ethers.Wallet(privateKey, provider)
 
 // Create contract instance
