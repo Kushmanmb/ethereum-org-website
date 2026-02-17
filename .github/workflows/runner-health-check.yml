@@ -1,0 +1,192 @@
+name: Self-Hosted Runner Health Check
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      runner_type:
+        description: 'Runner type to check'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - ethereum-org
+          - fast-build
+
+jobs:
+  # Check if self-hosted runners are available
+  check-runner-availability:
+    runs-on: ubuntu-latest
+    outputs:
+      has-self-hosted: ${{ steps.check.outputs.has-self-hosted }}
+    steps:
+      - name: Check runner availability
+        id: check
+        run: |
+          # This is a placeholder - actual implementation would use GitHub API
+          # to check runner availability
+          echo "has-self-hosted=false" >> $GITHUB_OUTPUT
+          echo "Note: This workflow is ready for self-hosted runners"
+          echo "To enable, configure runners as per docs/self-hosted-runners.md"
+
+  # Health check job - runs on self-hosted if available, otherwise skip
+  health-check:
+    needs: check-runner-availability
+    # Only run if self-hosted runners are configured
+    if: needs.check-runner-availability.outputs.has-self-hosted == 'true'
+    runs-on: [self-hosted, ethereum-org]
+    
+    steps:
+      - name: Check disk space
+        run: |
+          echo "=== Disk Space Check ==="
+          df -h
+          
+          # Check if disk usage is above 80%
+          usage=$(df -h / | tail -1 | awk '{print $5}' | sed 's/%//')
+          if [ "$usage" -gt 80 ]; then
+            echo "::warning::Disk usage is above 80%: ${usage}%"
+            if [ "$usage" -gt 90 ]; then
+              echo "::error::Critical: Disk usage is above 90%: ${usage}%"
+              exit 1
+            fi
+          else
+            echo "✓ Disk usage is healthy: ${usage}%"
+          fi
+
+      - name: Check memory
+        run: |
+          echo "=== Memory Check ==="
+          free -h
+          
+          # Check available memory
+          available=$(free -m | grep Mem | awk '{print $7}')
+          total=$(free -m | grep Mem | awk '{print $2}')
+          percent=$((available * 100 / total))
+          
+          if [ "$percent" -lt 10 ]; then
+            echo "::warning::Available memory is low: ${percent}%"
+          else
+            echo "✓ Memory is healthy: ${available}MB available (${percent}%)"
+          fi
+
+      - name: Check CPU load
+        run: |
+          echo "=== CPU Load Check ==="
+          uptime
+          
+          # Get load average
+          load=$(uptime | awk -F'load average:' '{print $2}' | awk '{print $1}' | sed 's/,//')
+          cores=$(nproc)
+          
+          echo "Load average: $load"
+          echo "CPU cores: $cores"
+          echo "✓ CPU check complete"
+
+      - name: Check Node.js environment
+        run: |
+          echo "=== Node.js Environment Check ==="
+          node --version
+          npm --version
+          
+          if command -v pnpm &> /dev/null; then
+            pnpm --version
+            echo "✓ pnpm is installed"
+          else
+            echo "::warning::pnpm is not installed"
+          fi
+
+      - name: Check Git
+        run: |
+          echo "=== Git Check ==="
+          git --version
+          echo "✓ Git is available"
+
+      - name: Test network connectivity
+        run: |
+          echo "=== Network Connectivity Check ==="
+          
+          # Check GitHub connectivity
+          if curl -s -I https://github.com > /dev/null; then
+            echo "✓ GitHub.com is reachable"
+          else
+            echo "::error::Cannot reach GitHub.com"
+            exit 1
+          fi
+          
+          # Check npm registry
+          if curl -s -I https://registry.npmjs.org > /dev/null; then
+            echo "✓ npm registry is reachable"
+          else
+            echo "::warning::Cannot reach npm registry"
+          fi
+
+      - name: Report runner status
+        run: |
+          echo "=== Runner Health Summary ==="
+          echo "✓ All health checks passed"
+          echo "Runner is operational and ready for workflows"
+
+  # Cleanup job - runs periodically to maintain runner health
+  cleanup:
+    needs: check-runner-availability
+    if: needs.check-runner-availability.outputs.has-self-hosted == 'true'
+    runs-on: [self-hosted, ethereum-org]
+    
+    steps:
+      - name: Clean npm cache
+        run: |
+          echo "=== Cleaning npm cache ==="
+          if command -v pnpm &> /dev/null; then
+            pnpm store prune
+            echo "✓ pnpm cache cleaned"
+          fi
+          
+          # Clean npm cache
+          npm cache clean --force
+          echo "✓ npm cache cleaned"
+
+      - name: Clean old logs (if any)
+        run: |
+          echo "=== Cleaning old logs ==="
+          # This is safe to run even if directories don't exist
+          find /tmp -name "*.log" -mtime +7 -delete 2>/dev/null || true
+          echo "✓ Old temporary logs cleaned"
+
+      - name: Report cleanup status
+        run: |
+          echo "=== Cleanup Summary ==="
+          echo "✓ Cleanup completed successfully"
+
+  # Summary job - always runs
+  summary:
+    runs-on: ubuntu-latest
+    needs: [check-runner-availability, health-check, cleanup]
+    if: always()
+    
+    steps:
+      - name: Health check summary
+        run: |
+          echo "=== Self-Hosted Runner Health Check Summary ==="
+          
+          if [ "${{ needs.check-runner-availability.outputs.has-self-hosted }}" == "true" ]; then
+            echo "Self-hosted runners are configured"
+            
+            if [ "${{ needs.health-check.result }}" == "success" ]; then
+              echo "✓ Health check: PASSED"
+            else
+              echo "✗ Health check: FAILED"
+            fi
+            
+            if [ "${{ needs.cleanup.result }}" == "success" ]; then
+              echo "✓ Cleanup: PASSED"
+            else
+              echo "✗ Cleanup: FAILED"
+            fi
+          else
+            echo "ℹ️  Self-hosted runners are not yet configured"
+            echo "   See docs/self-hosted-runners.md for setup instructions"
+          fi

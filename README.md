@@ -22,10 +22,51 @@ If you're looking for the Ethereum blockchain itself, there is no single repo. I
 
 ## Table of contents
 
+- [Maintainers & Governance](#maintainers--governance)
 - [How to contribute](#how-to-contribute)
 - [Translation Program](docs/translation-program.md)
 - [The ethereum.org website stack](docs/stack.md)
 - [Website conventions / best practices](docs/best-practices.md)
+
+## Maintainers & Governance
+
+Ethereum.org is a community-driven project maintained by core contributors and volunteers worldwide. Our governance model emphasizes transparency, decentralization, and community participation.
+
+### Current Core Maintainers
+
+- [@wackerow](https://github.com/wackerow)
+- [@corwintines](https://github.com/corwintines)
+- [@pettinarip](https://github.com/pettinarip)
+- [@minimalsm](https://github.com/minimalsm)
+
+### Specialized Areas
+
+- **Security & Bug Bounty**: [@asanso](https://github.com/asanso), [@fredriksvantes](https://github.com/fredriksvantes)
+- **Wallet Integration**: [@konopkja](https://github.com/konopkja), [@minimalsm](https://github.com/minimalsm)
+
+### How We Make Decisions
+
+- **Minor changes** (bug fixes, typos): 1 maintainer approval
+- **Moderate changes** (new features, refactors): 2 maintainer approvals
+- **Major changes** (architecture, breaking changes): consensus from all core maintainers
+- **Emergency fixes** (security, critical bugs): any core maintainer can merge with post-review
+
+### Documentation
+
+- [**Ownership & Governance Model**](docs/ownership.md) - Detailed roles, responsibilities, and decision-making processes
+- [**GitHub Rulesets**](docs/github-rulesets.md) - Branch protection and repository rules
+- [**Self-Hosted Runners**](docs/self-hosted-runners.md) - CI/CD infrastructure setup and management
+
+### Becoming a Maintainer
+
+We welcome contributors who demonstrate consistent, high-quality contributions over time. If you're interested in taking on a maintainer role:
+
+1. Make regular contributions (10+ merged PRs over 3+ months)
+2. Show expertise in a specific area
+3. Participate actively in code reviews and discussions
+4. Uphold our community values and code of conduct
+
+Learn more in our [ownership documentation](docs/ownership.md#becoming-a-maintainer).
 
 ## How to contribute
 
