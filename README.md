@@ -14,6 +14,9 @@ This is the repo for the [ethereum.org](https://ethereum.org) website, a resourc
 
 [ethereum.org](https://ethereum.org) is being improved and changed over time through the contributions of community members who submit content, give feedback, or volunteer their time to manage its evolution. If you’re interested in helping to improve [ethereum.org](https://ethereum.org), find out [how to contribute](https://ethereum.org/contributing/).
 
+> [!NOTE]
+> **📚 New to this project?** Start with our [contribution guide](CONTRIBUTING.md) and [governance model](docs/ownership.md). Have questions about security? See [SECURITY.md](SECURITY.md) for vulnerability reporting.
+
 ## Looking for the Ethereum blockchain's code?
 
 If you're looking for the Ethereum blockchain itself, there is no single repo. Instead, Ethereum has multiple implementations of the protocol written in different programming languages for security and diversity. [Check out the different implementations](https://ethereum.org/developers/docs/nodes-and-clients/#execution-clients)
@@ -26,6 +29,7 @@ If you're looking for the Ethereum blockchain itself, there is no single repo. I
 - [How to contribute](#how-to-contribute)
 - [Translation Program](docs/translation-program.md)
 - [The ethereum.org website stack](docs/stack.md)
+- [Security & Environment Variables](#security--environment-variables)
 - [Website conventions / best practices](docs/best-practices.md)
 
 ## Maintainers & Governance
@@ -218,6 +222,58 @@ Learn more about how we review pull requests [here](docs/review-process.md).
 - `master` is continually synced to Netlify and will automatically deploy new commits to ethereum.org
 - Learn more about how we deploy the site [here](docs/deploy-process.md)
 - You can [view the history of releases](https://github.com/ethereum/ethereum-org-website/releases), which include PR highlights
+
+<hr style="margin-top: 3em; margin-bottom: 3em;">
+
+## Security & Environment Variables
+
+> [!IMPORTANT]
+> **⚠️ Protecting sensitive information is crucial for this project.**
+
+### Environment Variables & API Keys
+
+This project uses environment variables for API keys and sensitive configuration. When working with the project:
+
+- **DO NOT commit `.env` files** - These contain secrets and are automatically ignored by Git (see `.gitignore`)
+- **NEVER push API keys to GitHub** - Even in example code or documentation
+- **Be careful with `NEXT_PUBLIC_*` variables** - These are exposed to the browser, so never use them for secrets
+- **Use `.env.example` as a template** - Copy it to `.env` and add your own keys
+
+### Required Setup
+
+Before running the project locally, you'll need to configure environment variables:
+
+1. Copy `.env.example` to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Add your API keys following the instructions in [docs/api-keys.md](docs/api-keys.md)
+
+3. Review which keys are required vs optional - many features work with mock data during development
+
+### Security Best Practices
+
+- **Reporting Vulnerabilities**: If you discover a security issue, please report it to `security@ethereum.org` using the PGP key outlined in https://ethereum.org/.well-known/security.txt
+- **Review SECURITY.md**: See [SECURITY.md](SECURITY.md) for our security policy
+- **Keep Dependencies Updated**: Regular dependency updates help maintain security
+- **API Key Rotation**: Rotate API keys periodically and immediately if compromised
+
+### API Keys Used
+
+This project integrates with several external services. See [docs/api-keys.md](docs/api-keys.md) for detailed setup instructions:
+
+- **GitHub API** - Repository data fetching (recommended for local development)
+- **Algolia** - Site search functionality
+- **Etherscan API** - Ethereum blockchain data
+- **Google APIs** - Calendar events and sheets
+- **Matomo** - Analytics (production only)
+- **AWS SES** - Email functionality
+- **Crowdin** - Translation management
+- **Dune Analytics** - Blockchain statistics
+
+Most of these are optional for local development. Set `USE_MOCK_DATA=true` in your `.env` to work without API keys.
+
 
 <hr style="margin-top: 3em; margin-bottom: 3em;">
 
