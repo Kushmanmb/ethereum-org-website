@@ -104,7 +104,7 @@ jobs:
              - Prefer Server Components (App Router)
              - Use Radix UI primitives for accessibility
              - Export from appropriate index files
-             - Add Storybook stories for new components (*.stories.tsx)
+             - Add Storybook stories for new components in a `__stories__` subdirectory (e.g., `src/components/ui/__stories__/Button.stories.tsx`, using the `*.stories.tsx` suffix)
           
           5. **Internationalization**
              - All user-facing text must be translatable
