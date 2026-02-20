@@ -171,10 +171,20 @@ jobs:
           ## 🎉 Ready to Contribute!
           
           You're all set! Start by:
-          1. Creating a new branch: git checkout -b feature/your-feature
+          
+          1. Creating a new branch:
+          ```bash
+          git checkout -b feature/your-feature
+          ```
+          
           2. Opening relevant files in your editor
+          
           3. Let Copilot assist you while following our conventions
-          4. Run tests before submitting: pnpm lint && pnpm build
+          
+          4. Run tests before submitting:
+          ```bash
+          pnpm lint && pnpm build
+          ```
           
           Happy coding with Copilot! 🚀
           
