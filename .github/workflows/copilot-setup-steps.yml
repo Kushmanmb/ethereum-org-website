@@ -16,15 +16,10 @@ jobs:
     steps:
       - name: Display Setup Instructions
         run: |
-          cat << 'EOF'
-          ╔══════════════════════════════════════════════════════════════════════════════╗
-          ║                                                                              ║
-          ║              GitHub Copilot Setup Guide for ethereum.org                    ║
-          ║                                                                              ║
-          ╚══════════════════════════════════════════════════════════════════════════════╝
-
-          📋 Prerequisites
-          ================
+          cat << 'EOF' >> $GITHUB_STEP_SUMMARY
+          # GitHub Copilot Setup Guide for ethereum.org
+          
+          ## 📋 Prerequisites
           
           1. GitHub Copilot Subscription
              - Personal account: https://github.com/settings/copilot
@@ -35,8 +30,7 @@ jobs:
              - JetBrains IDEs: Install "GitHub Copilot" plugin
              - Neovim: Install copilot.vim plugin
           
-          🚀 Quick Start
-          ===============
+          ## 🚀 Quick Start
           
           1. Install GitHub Copilot Extension
              - VS Code: Search for "GitHub Copilot" in Extensions Marketplace
@@ -50,8 +44,7 @@ jobs:
              - Look for the Copilot icon in your status bar
              - Status should show "Ready"
           
-          📚 Repository-Specific Context
-          ===============================
+          ## 📚 Repository-Specific Context
           
           This is the ethereum.org website - a Next.js 14+ application with:
           
@@ -62,27 +55,31 @@ jobs:
           - **Package Manager**: pnpm (required)
           - **Internationalization**: next-intl (60+ languages)
           
-          🎯 Key Development Commands
-          ============================
+          ## 🎯 Key Development Commands
           
-          # Setup environment
+          ### Setup environment
+          ```bash
           nvm use                    # Use correct Node.js version
           corepack enable            # Enable package manager
           pnpm install              # Install dependencies
+          ```
           
-          # Development
+          ### Development
+          ```bash
           pnpm dev                  # Start dev server (localhost:3000)
           pnpm build                # Build for production
           pnpm lint                 # Run ESLint
           pnpm lint:fix            # Auto-fix linting issues
           pnpm format              # Format with Prettier
+          ```
           
-          # Testing & Quality
+          ### Testing & Quality
+          ```bash
           pnpm storybook           # Start Storybook
           pnpm test:e2e            # Run Playwright E2E tests
+          ```
           
-          📝 Code Conventions with Copilot
-          =================================
+          ## 📝 Code Conventions with Copilot
           
           When using Copilot, follow these conventions:
           
@@ -114,8 +111,7 @@ jobs:
              - Use `getTranslations()` and `getLocale()`
              - Translation files in `src/intl/[locale]/`
           
-          💡 Copilot Best Practices for This Repo
-          ========================================
+          ## 💡 Copilot Best Practices for This Repo
           
           1. **Context Comments**
              Write clear comments before complex code:
@@ -144,41 +140,35 @@ jobs:
              Always include ARIA labels and semantic HTML:
              <button aria-label="Open navigation menu" />
           
-          🔧 Troubleshooting
-          ===================
+          ## 🔧 Troubleshooting
           
-          Issue: Copilot not providing suggestions
-          ----------------------------------------
+          ### Issue: Copilot not providing suggestions
           - Check status bar icon - should show "Ready"
           - Verify GitHub authentication: Command Palette → "GitHub: Sign Out" then sign back in
           - Restart your IDE
           - Check network/firewall settings
           
-          Issue: Suggestions don't match project style
-          ----------------------------------------------
+          ### Issue: Suggestions don't match project style
           - Copilot learns from the files you have open
           - Keep relevant files open in your editor
           - Review and accept only appropriate suggestions
           - Refer to docs/best-practices.md and CLAUDE.md
           
-          Issue: TypeScript errors in suggestions
-          ----------------------------------------
+          ### Issue: TypeScript errors in suggestions
           - Ensure you've run `pnpm install`
           - Check `tsconfig.json` is properly configured
           - Copilot uses your local TypeScript server
           
-          📖 Additional Resources
-          =======================
+          ## 📖 Additional Resources
           
-          - ethereum.org Contributing Guide: https://ethereum.org/contributing/
-          - Repository README: /README.md
-          - Code Conventions: /docs/code-conventions.md
-          - Best Practices: /docs/best-practices.md
-          - /CLAUDE.md: Project context for AI assistants
-          - GitHub Copilot Docs: https://docs.github.com/copilot
+          - [ethereum.org Contributing Guide](https://ethereum.org/contributing/)
+          - [Repository README](${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/README.md)
+          - [Code Conventions](${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/docs/code-conventions.md)
+          - [Best Practices](${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/docs/best-practices.md)
+          - [CLAUDE.md - Project context for AI assistants](${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/CLAUDE.md)
+          - [GitHub Copilot Docs](https://docs.github.com/copilot)
           
-          🎉 Ready to Contribute!
-          ========================
+          ## 🎉 Ready to Contribute!
           
           You're all set! Start by:
           1. Creating a new branch: git checkout -b feature/your-feature
@@ -193,8 +183,8 @@ jobs:
       - name: Repository Setup Check
         run: |
           echo "✅ Workflow executed successfully"
-          echo "📝 Review the setup instructions above"
-          echo "🔗 For more details, see:"
-          echo "   - README.md"
-          echo "   - CONTRIBUTING.md"
-          echo "   - docs/best-practices.md"
+          echo "📝 Review the setup instructions in the step summary above"
+          echo "🔗 Direct links:"
+          echo "   - ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/README.md"
+          echo "   - ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/CONTRIBUTING.md"
+          echo "   - ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/docs/best-practices.md"
