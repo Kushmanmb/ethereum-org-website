@@ -128,7 +128,7 @@ jobs:
           3. **Import Patterns**
              Copilot learns from existing imports:
              import { cn } from "@/lib/utils/cn"
-             import { Button } from "@/components/ui/Button"
+             import { Button } from "@/components/ui/buttons/Button"
           
           4. **Testing**
              Use Storybook stories as documentation:
