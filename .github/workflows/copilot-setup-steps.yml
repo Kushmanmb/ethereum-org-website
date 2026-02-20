@@ -89,7 +89,7 @@ jobs:
              - Pages: kebab-case (Next.js conventions)
           
           2. **TypeScript**
-             - Use `interface` for object shapes
+             - Use `type` for component props (prevents declaration merging)
              - Use `type` for unions/intersections
              - Avoid `any` - use `unknown` instead (ESLint enforced)
              - Import types from `@/lib/types`
