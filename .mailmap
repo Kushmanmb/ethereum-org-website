@@ -3,6 +3,6 @@
 #   Proper Name <proper@email.com> <commit@email.com>
 #   Proper Name <proper@email.com> Other Name <commit@email.com>
 
-# Consolidate GitHub noreply address with canonical identity
+# Consolidate GitHub noreply address and alternate emails with canonical identity
 Matthew Brace <193178375+Kushmanmb@users.noreply.github.com> <193178375+Kushmanmb@users.noreply.github.com>
-Matthew Brace <193178375+Kushmanmb@users.noreply.github.com> Yaketh <193178375+Kushmanmb@users.noreply.github.com>
+Matthew Brace <193178375+Kushmanmb@users.noreply.github.com> <mattbrace92@gmail.com>
