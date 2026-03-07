@@ -30,10 +30,10 @@ ETHERSCAN_API_KEY=<your-key> node scripts/verify-contract.js
 
 **Contracts checked:**
 
-| Name | Address |
-|------|---------|
-| Eth2 Deposit Contract | `0x00000000219ab540356cBB839Cbe05303d7705Fa` |
-| WETH (Wrapped Ether) | `0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2` |
+The set of contracts checked by this script is derived from the configuration
+in `src/data/addresses.ts` (for example, from a `CONTRACTS` export). Refer to
+that file for the authoritative, up-to-date list of contract names and
+addresses that will be verified.
 
 ---
 
