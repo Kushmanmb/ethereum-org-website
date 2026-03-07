@@ -24,8 +24,8 @@ const path = require("path")
 require("ts-node").register({
   transpileOnly: true,
   project: path.join(__dirname, "..", "tsconfig.json"),
-  // Override module kind so that TypeScript files are compiled to CommonJS,
-  // ensuring they can be loaded via `require()` in this script.
+  // Explicitly compile TypeScript files to CommonJS so they can be loaded
+  // via `require()` in this CommonJS script, independent of the repo tsconfig.
   compilerOptions: {
     module: "commonjs",
   },
