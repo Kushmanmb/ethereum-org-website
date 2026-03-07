@@ -14,3 +14,18 @@ export const WETH_CONTRACT: ContractMetadata = {
   manager: "0x6fb9e80dDd0f5DC99D7cB38b07e8b298A57bF253",
   controller: "0xa14373a2209fAd5cDCc22841e9176E0ce4C50c17",
 }
+
+export interface ContractEntry extends ContractMetadata {
+  name: string
+}
+
+export const CONTRACTS: ContractEntry[] = [
+  {
+    name: "Eth2 Deposit Contract",
+    address: DEPOSIT_CONTRACT_ADDRESS,
+  },
+  {
+    name: "WETH (Wrapped Ether)",
+    ...WETH_CONTRACT,
+  },
+]

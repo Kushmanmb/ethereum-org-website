@@ -24,14 +24,20 @@ const path = require("path")
 require("ts-node").register({
   transpileOnly: true,
   project: path.join(__dirname, "..", "tsconfig.json"),
+  // Override module kind so that TypeScript files are compiled to CommonJS,
+  // ensuring they can be loaded via `require()` in this script.
+  compilerOptions: {
+    module: "commonjs",
+  },
 })
 
 // ---------------------------------------------------------------------------
 // Contract data (imported from src/data/addresses.ts)
 // ---------------------------------------------------------------------------
 
-const addressesModule = require("../src/data/addresses.ts") || {}
+const addressesModule = require("../src/data/addresses.ts")
 const CONTRACTS = addressesModule.CONTRACTS || []
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
@@ -78,6 +84,11 @@ function rpcCall(method, params) {
       })
     })
 
+    // Prevent stalled RPC connections from hanging the process.
+    req.setTimeout(10000, () => {
+      req.destroy(new Error("RPC request timed out"))
+    })
+
     req.on("error", reject)
     req.write(body)
     req.end()
@@ -98,27 +109,32 @@ function etherscanGetAbi(address, apiKey) {
     const urlStr = `${ETHERSCAN_API_URL}?${params.toString()}`
     const url = new URL(urlStr)
 
-    https
-      .get(
-        {
-          hostname: url.hostname,
-          port: url.port || 443,
-          path: `${url.pathname}?${url.searchParams.toString()}`,
-          headers: { Accept: "application/json" },
-        },
-        (res) => {
-          let data = ""
-          res.on("data", (chunk) => (data += chunk))
-          res.on("end", () => {
-            try {
-              resolve(JSON.parse(data))
-            } catch (e) {
-              reject(new Error(`Failed to parse Etherscan response: ${data}`))
-            }
-          })
-        }
-      )
-      .on("error", reject)
+    const req = https.get(
+      {
+        hostname: url.hostname,
+        port: url.port || 443,
+        path: `${url.pathname}?${url.searchParams.toString()}`,
+        headers: { Accept: "application/json" },
+      },
+      (res) => {
+        let data = ""
+        res.on("data", (chunk) => (data += chunk))
+        res.on("end", () => {
+          try {
+            resolve(JSON.parse(data))
+          } catch (e) {
+            reject(new Error(`Failed to parse Etherscan response: ${data}`))
+          }
+        })
+      }
+    )
+
+    // Prevent stalled Etherscan connections from hanging the process.
+    req.setTimeout(10000, () => {
+      req.destroy(new Error("Etherscan request timed out"))
+    })
+
+    req.on("error", reject)
   })
 }
 
