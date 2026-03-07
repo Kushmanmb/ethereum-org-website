@@ -30,7 +30,8 @@ require("ts-node").register({
 // Contract data (imported from src/data/addresses.ts)
 // ---------------------------------------------------------------------------
 
-const { CONTRACTS } = require("../src/data/addresses")
+const addressesModule = require("../src/data/addresses.ts") || {}
+const CONTRACTS = addressesModule.CONTRACTS || []
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
