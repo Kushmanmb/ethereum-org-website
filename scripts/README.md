@@ -2,6 +2,41 @@
 
 This directory contains utility scripts for the ethereum.org website.
 
+## Contract Verification Scripts
+
+### verify-contract.js
+
+**Purpose:** Verifies that contract addresses defined in `src/data/addresses.ts`
+exist on Ethereum mainnet (have deployed bytecode) and are optionally verified
+on Etherscan.
+
+**Features:**
+- Checks each contract via a public Ethereum JSON-RPC endpoint (`eth_getCode`)
+- Confirms addresses have deployed bytecode (i.e., are smart contracts, not EOAs)
+- Optionally checks Etherscan source-verification status when `ETHERSCAN_API_KEY` is set
+- Exits with a non-zero status code when any contract fails verification
+
+**Usage:**
+
+```bash
+# Without Etherscan (bytecode check only)
+node scripts/verify-contract.js
+# or via npm
+npm run verify-contract
+
+# With Etherscan source verification
+ETHERSCAN_API_KEY=<your-key> node scripts/verify-contract.js
+```
+
+**Contracts checked:**
+
+| Name | Address |
+|------|---------|
+| Eth2 Deposit Contract | `0x00000000219ab540356cBB839Cbe05303d7705Fa` |
+| WETH (Wrapped Ether) | `0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2` |
+
+---
+
 ## Security Scripts
 
 ### check-secrets.sh
