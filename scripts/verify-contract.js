@@ -18,28 +18,19 @@
 "use strict"
 
 const https = require("https")
+const path = require("path")
+
+// Enable loading of TypeScript sources (e.g., src/data/addresses.ts).
+require("ts-node").register({
+  transpileOnly: true,
+  project: path.join(__dirname, "..", "tsconfig.json"),
+})
 
 // ---------------------------------------------------------------------------
-// Contract data (mirrors src/data/addresses.ts)
-// NOTE: Keep this list in sync when addresses.ts is updated.
+// Contract data (imported from src/data/addresses.ts)
 // ---------------------------------------------------------------------------
 
-const DEPOSIT_CONTRACT_ADDRESS = "0x00000000219ab540356cBB839Cbe05303d7705Fa"
-
-const CONTRACTS = [
-  {
-    name: "Eth2 Deposit Contract",
-    address: DEPOSIT_CONTRACT_ADDRESS,
-  },
-  {
-    name: "WETH (Wrapped Ether)",
-    address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-    owner: "Yaketh.eth",
-    manager: "0x6fb9e80dDd0f5DC99D7cB38b07e8b298A57bF253",
-    controller: "0xa14373a2209fAd5cDCc22841e9176E0ce4C50c17",
-  },
-]
-
+const { CONTRACTS } = require("../src/data/addresses")
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
