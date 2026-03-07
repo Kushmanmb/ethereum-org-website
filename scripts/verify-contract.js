@@ -36,6 +36,7 @@ const CONTRACTS = [
     address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     owner: "Yaketh.eth",
     manager: "0x6fb9e80dDd0f5DC99D7cB38b07e8b298A57bF253",
+    controller: "0xa14373a2209fAd5cDCc22841e9176E0ce4C50c17",
   },
 ]
 
