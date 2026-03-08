@@ -8,6 +8,9 @@ on:
 jobs:
   get_data_and_create_pr:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
     steps:
       - name: Check out code
         uses: actions/checkout@master
