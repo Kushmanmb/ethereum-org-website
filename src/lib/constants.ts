@@ -40,6 +40,7 @@ export const CONTENT_IMAGES_MAX_WIDTH = 800
 export const GITHUB_BASE_API =
   "https://api.github.com/repos/ethereum/ethereum-org-website"
 export const GITHUB_COMMITS_URL = GITHUB_BASE_API + "/commits"
+export const GITHUB_AUTOLINKS_URL = GITHUB_BASE_API + "/autolinks"
 export const GITHUB_URL = `https://github.com/`
 export const COINGECKO_API_BASE_URL =
   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category="
