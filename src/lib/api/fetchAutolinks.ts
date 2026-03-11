@@ -3,11 +3,17 @@ import type { GHAutolink } from "@/lib/types"
 
 export const fetchAutolinks = async (): Promise<GHAutolink[]> => {
   try {
+    const headers: Record<string, string> = {
+      Accept: "application/vnd.github.v3+json",
+    }
+
+    const token = process.env.GITHUB_TOKEN_READ_ONLY
+    if (token) {
+      headers.Authorization = `token ${token}`
+    }
+
     const response = await fetch(GITHUB_AUTOLINKS_URL, {
-      headers: {
-        Authorization: `token ${process.env.GITHUB_TOKEN_READ_ONLY}`,
-        Accept: "application/vnd.github.v3+json",
-      },
+      headers,
     })
 
     if (!response.ok) {
