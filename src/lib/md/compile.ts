@@ -63,6 +63,11 @@ export const compile = async ({
       parseFrontmatter: true,
       mdxOptions,
       scope,
+      // blockJS: false is safe here because all MDX content comes from
+      // the trusted repository (public/content/), not from user input.
+      // Some MDX pages pass scope variables (e.g. gfissues) as JSX props
+      // like <IssuesList issues={gfissues} />, which requires JS enabled.
+      blockJS: false,
     },
   })
 
