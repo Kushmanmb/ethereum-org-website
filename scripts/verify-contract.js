@@ -142,6 +142,104 @@ function etherscanGetAbi(address, apiKey) {
 // Verification logic
 // ---------------------------------------------------------------------------
 
+// EIP-1967 standard proxy implementation storage slot:
+// keccak256("eip1967.proxy.implementation") - 1
+const EIP1967_IMPLEMENTATION_SLOT =
+  "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc"
+
+/**
+ * Reads the EIP-1967 implementation storage slot of a potential proxy
+ * contract.  Returns the implementation address (lowercase hex) when the slot
+ * is non-zero, or null when the contract does not appear to be an EIP-1967
+ * proxy.
+ */
+async function getProxyImplementation(address) {
+  let slot
+  try {
+    slot = await rpcCall("eth_getStorageAt", [
+      address,
+      EIP1967_IMPLEMENTATION_SLOT,
+      "latest",
+    ])
+  } catch {
+    return null
+  }
+
+  // eth_getStorageAt returns a 32-byte hex string (66 chars including "0x").
+  // A value of all-zeros means the slot is unset (not a proxy).
+  if (!slot || /^0x0*$/.test(slot)) {
+    return null
+  }
+
+  // Ensure the response is a full 32-byte value before slicing.
+  // A valid storage slot value is "0x" followed by exactly 64 hex characters.
+  if (slot.length < 42) {
+    return null
+  }
+
+  // The implementation address occupies the rightmost 20 bytes (40 hex chars).
+  const implAddress = "0x" + slot.slice(-40)
+
+  // Guard against an all-zero address.
+  if (/^0x0{40}$/.test(implAddress)) {
+    return null
+  }
+
+  return implAddress
+}
+
+/**
+ * Checks whether the contract is an EIP-1967 proxy and, when it is, also
+ * verifies that the implementation contract has bytecode deployed on mainnet.
+ * Returns true when the contract is not a proxy OR when both the proxy and its
+ * implementation pass verification.  Returns false only when a proxy
+ * implementation is detected but fails verification.
+ */
+async function verifyProxy(contract) {
+  const { name, address } = contract
+
+  const implAddress = await getProxyImplementation(address)
+
+  if (!implAddress) {
+    console.log(`  ℹ  ${name}: not detected as an EIP-1967 proxy`)
+    return true
+  }
+
+  console.log(`  ℹ  ${name}: EIP-1967 proxy detected`)
+  console.log(`     implementation → ${implAddress}`)
+
+  // Validate the implementation address format before querying the chain.
+  if (!/^0x[0-9a-fA-F]{40}$/.test(implAddress)) {
+    console.error(
+      `  ✗ ${name}: proxy implementation address has invalid format "${implAddress}"`
+    )
+    return false
+  }
+
+  let code
+  try {
+    code = await rpcCall("eth_getCode", [implAddress, "latest"])
+  } catch (err) {
+    console.error(
+      `  ✗ ${name}: failed to fetch implementation bytecode – ${err.message}`
+    )
+    return false
+  }
+
+  if (!code || code === "0x") {
+    console.error(
+      `  ✗ ${name}: proxy implementation (${implAddress}) has no bytecode – ` +
+        `implementation contract not deployed`
+    )
+    return false
+  }
+
+  console.log(
+    `  ✓ ${name}: proxy implementation (${implAddress}) bytecode confirmed`
+  )
+  return true
+}
+
 /**
  * Verifies that the address has contract bytecode deployed on mainnet.
  * Returns true on success, false on failure.
@@ -230,6 +328,11 @@ async function main() {
 
     const exists = await verifyContractExists(contract)
     if (!exists) {
+      allPassed = false
+    }
+
+    const proxyOk = await verifyProxy(contract)
+    if (!proxyOk) {
       allPassed = false
     }
 
