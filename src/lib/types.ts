@@ -914,6 +914,13 @@ export type GHLabel = {
   color: string
 }
 
+export type GHAutolink = {
+  id: number
+  key_prefix: string
+  url_template: string
+  is_alphanumeric: boolean
+}
+
 /**
  * RSS Feed handling
  */
