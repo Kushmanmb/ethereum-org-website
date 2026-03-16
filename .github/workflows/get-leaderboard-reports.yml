@@ -34,6 +34,7 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Action"
+          git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
 
       - name: Generate timestamp and readable date
         id: date
@@ -75,6 +76,7 @@ jobs:
           echo "Thank you to everyone contributing to translate ethereum.org ❤️" >> pr_body.txt
 
       - name: Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh auth login --with-token ${{ secrets.GITHUB_TOKEN }}
           gh pr create --base dev --head "automated-update-${{ env.TIMESTAMP }}" --title "Update translation leaderboard data from Crowdin - ${{ env.READABLE_DATE }}" --body-file pr_body.txt
