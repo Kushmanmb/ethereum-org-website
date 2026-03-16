@@ -8,7 +8,7 @@ lang: sk
 
 Dôkaz s nulovou znalosťou je spôsob, ako preukázať platnosť tvrdenia bez toho, aby bolo odhalené samotné tvrdenie. „Dokazovateľ“ je strana, ktorá sa snaží preukázať tvrdenie, zatiaľ čo „overovateľ“ je zodpovedný za overenie tvrdenia.
 
-Dôkazy s nulovou znalosťou sa prvýkrát objavili v dokumente z roku 1985 s názvom „[Znalostná komplexita interaktívnych dôkazných systémov](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)“. Ten poskytuje definíciu dôkazov s nulovými znalosťami, ktorá sa dnes používa najviac:
+Dôkazy s nulovou znalosťou sa prvýkrát objavili v dokumente z roku 1985 s názvom „[Znalostná komplexita interaktívnych dôkazných systémov](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)“. Ten poskytuje definíciu dôkazov s nulovými znalosťami, ktorá sa dnes používa najviac:
 
 > Protokol s nulovou znalosťou je metóda, pomocou ktorej jedna strana (dokazovateľ) **môže preukázať** druhej strane (overovateľovi), **že je niečo pravdivé bez toho, aby prezradila akékoľvek informácie** okrem skutočnosti, že toto konkrétne tvrdenie je pravdivé.
 

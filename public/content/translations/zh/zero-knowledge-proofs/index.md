@@ -8,7 +8,7 @@ lang: zh
 
 零知识证明是能够在不披露声明本身的情况下，验证声明有效性的一种方法。 “证明者”是试图证明声明的一方，而“验证者”则负责验证声明。
 
-零知识证明在 1985 年的一篇论文“[交互式证明系统的知识复杂度](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)”中被首次提出，它给出了至今仍被广泛使用的零知识证明的定义：
+零知识证明在 1985 年的一篇论文“[交互式证明系统的知识复杂度](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)”中被首次提出，它给出了至今仍被广泛使用的零知识证明的定义：
 
 > 零知识协议是一种方法，通过这种方法，一方（证明者）可以向另一方（验证者）**证明**某个声明是真实的，并且除了该声明是真实的外，**不会透露任何额外信息**。
 

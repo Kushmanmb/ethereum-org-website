@@ -8,7 +8,7 @@ lang: id
 
 Bukti tanpa pengetahuan adalah cara untuk membuktikan keabsahan suatu pernyataan tanpa mengungkapkan pernyataan itu sendiri. 'Pembukti' adalah pihak yang mencoba membuktikan klaim, sedangkan 'pemeriksa' bertanggung jawab untuk memvalidasi klaim.
 
-Bukti tanpa pengetahuan pertama kali muncul dalam makalah tahun 1985, "[Kompleksitas pengetahuan dari sistem pembuktian interaktif](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)" yang memberikan definisi bukti nol pengetahuan yang banyak digunakan saat ini:
+Bukti tanpa pengetahuan pertama kali muncul dalam makalah tahun 1985, "[Kompleksitas pengetahuan dari sistem pembuktian interaktif](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)" yang memberikan definisi bukti nol pengetahuan yang banyak digunakan saat ini:
 
 > Protokol bukti tanpa pengetahuan adalah metode di mana satu pihak (pembukti) **dapat membuktikan** kepada pihak lain (pemeriksa) **bahwa sesuatu adalah benar, tanpa mengungkapkan informasi apa pun** selain fakta bahwa pernyataan tersebut memang benar.
 

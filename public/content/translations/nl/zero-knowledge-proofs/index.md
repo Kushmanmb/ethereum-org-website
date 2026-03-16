@@ -8,7 +8,7 @@ lang: nl
 
 Een zero-knowledge bewijs is een manier om de geldigheid van een bewering te bewijzen zonder de bewering zelf te onthullen. De 'bewijzer' is de partij die een claim probeert te bewijzen, terwijl de 'verificateur' verantwoordelijk is voor het valideren van de claim.
 
-Zero-knowledge bewijzen verschenen voor het eerst in een artikel uit 1985, “[The knowledge complexity of interactive proof systems](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)” dat een definitie geeft van zero-knowledge bewijzen die vandaag de dag veel gebruikt wordt:
+Zero-knowledge bewijzen verschenen voor het eerst in een artikel uit 1985, “[The knowledge complexity of interactive proof systems](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)” dat een definitie geeft van zero-knowledge bewijzen die vandaag de dag veel gebruikt wordt:
 
 > Een zero-knowledge protocol is een methode waarbij de ene partij (de bewijzer) **kan bewijzen** aan de andere partij (de verificateur) **dat iets waar is, zonder dat er informatie hoeft te worden prijsgegeven** behalve het feit dat deze specifieke bewering waar is.
 

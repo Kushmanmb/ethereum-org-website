@@ -8,7 +8,7 @@ lang: pl
 
 Dowód o wiedzy zerowej to sposób na udowodnienie ważności stwierdzenia bez ujawniania samego stwierdzenia. „Udowadniający” jest stroną próbującą udowodnić twierdzenie, podczas gdy „weryfikator” jest odpowiedzialny za walidację twierdzenia.
 
-Dowody wiedzy zerowej pojawiły się po raz pierwszy w artykule z 1985 r. pt. „[Złożoność wiedzy interaktywnych systemów dowodowych](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)”, który zawiera definicję dowodów wiedzy zerowej szeroko stosowanych obecnie:
+Dowody wiedzy zerowej pojawiły się po raz pierwszy w artykule z 1985 r. pt. „[Złożoność wiedzy interaktywnych systemów dowodowych](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)”, który zawiera definicję dowodów wiedzy zerowej szeroko stosowanych obecnie:
 
 > Protokół wiedzy zerowej to metoda, za pomocą której jedna strona (udowadniający) **może udowodnić** drugiej stronie (weryfikatorowi), **że coś jest prawdą, bez ujawniania jakichkolwiek informacji** poza faktem, że to konkretne stwierdzenie jest prawdziwe.
 

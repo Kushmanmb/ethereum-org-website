@@ -8,7 +8,7 @@ lang: pt-br
 
 Uma prova de conhecimento zero é uma forma de provar a validade de uma afirmação sem a revelar. O “provador” é a parte que tenta provar uma reivindicação, enquanto o “verificador” é responsável pela validação da reivindicação.
 
-As provas de conhecimento zero apareceram pela primeira vez em um artigo de 1985, “[A complexidade conhecida dos sistemas de prova interativos](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)que fornece uma definição de provas de conhecimento zero amplamente utilizadas hoje:
+As provas de conhecimento zero apareceram pela primeira vez em um artigo de 1985, “[A complexidade conhecida dos sistemas de prova interativos](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)que fornece uma definição de provas de conhecimento zero amplamente utilizadas hoje:
 
 > Um protocolo de conhecimento zero é um método pelo qual uma parte (o provador) **pode comprovar** a outra parte (o verificador) **que algo é verdadeiro, sem revelar nenhuma informação** além do fato de que essa declaração específica é verdadeira.
 

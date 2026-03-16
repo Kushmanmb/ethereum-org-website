@@ -8,7 +8,7 @@ lang: cs
 
 Důkaz s nulovou znalostí je způsob, jak prokázat platnost tvrzení, aniž by bylo odhaleno samotné tvrzení. „Dokazovatel“ je strana, která se snaží prokázat tvrzení, zatímco „ověřovatel“ je odpovědný za ověření tvrzení.
 
-Důkazy s nulovou znalostí se poprvé objevily v dokumentu z roku 1985 s názvem „[Znalostí komplexita interaktivních důkazních systémů](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)“. Ten poskytuje definici důkazů s nulovými znalostmi, která se dnes používá nejvíce:
+Důkazy s nulovou znalostí se poprvé objevily v dokumentu z roku 1985 s názvem „[Znalostí komplexita interaktivních důkazních systémů](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)“. Ten poskytuje definici důkazů s nulovými znalostmi, která se dnes používá nejvíce:
 
 > Protokol s nulovou znalostí je metoda, pomocí které jedna strana (dokazovatel) **může prokázat** druhé straně (ověřovateli), **že je něco pravdivé, aniž by prozradila jakékoli informace** kromě skutečnosti, že toto konkrétní tvrzení je pravdivé.
 

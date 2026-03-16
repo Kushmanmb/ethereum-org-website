@@ -8,7 +8,7 @@ lang: fr
 
 Une preuve à divulgation nulle est un moyen de prouver la validité d'une information sans révéler l'information elle-même. Le « prouveur » est la partie qui tente de prouver une affirmation, tandis que le « vérificateur » est responsable de la validation de l'affirmation.
 
-Les preuves à divulgation nulle sont apparues pour la première fois dans un article publié en 1985, "[La complexité de connaissance des systèmes interactifs de preuve](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)" qui fournit une définition des preuves à divulgation nulle largement utilisée aujourd'hui :
+Les preuves à divulgation nulle sont apparues pour la première fois dans un article publié en 1985, "[La complexité de connaissance des systèmes interactifs de preuve](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)" qui fournit une définition des preuves à divulgation nulle largement utilisée aujourd'hui :
 
 > Un protocole à divulgation nulle est une méthode par laquelle une partie (le démonstrateur) **peut prouver** à une autre partie (le vérificateur)** qu'une chose est vraie, sans révéler aucune autre information** que la véracité de cette déclaration spécifique.
 

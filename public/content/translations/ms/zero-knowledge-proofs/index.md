@@ -8,7 +8,7 @@ lang: ms
 
 Bukti pengetahuan sifar ialah satu cara untuk membuktikan kesahihan sesuatu kenyataan tanpa mendedahkan kenyataan itu sendiri. ‘Pembukti’ ialah pihak yang cuba membuktikan sesuatu tuntutan, manakala ‘pengesah’ bertanggungjawab untuk mengesahkan tuntutan tersebut.
 
-Bukti pengetahuan sifar pertama kali muncul dalam makalah 1985, "[Kerumitan pengetahuan sistem bukti interaktif](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)" yang menyediakan takrifan bukti pengetahuan sifar yang digunakan secara meluas hari ini:
+Bukti pengetahuan sifar pertama kali muncul dalam makalah 1985, "[Kerumitan pengetahuan sistem bukti interaktif](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)" yang menyediakan takrifan bukti pengetahuan sifar yang digunakan secara meluas hari ini:
 
 > Protokol pengetahuan sifar ialah kaedah yang mana satu pihak (pembukti) **boleh membuktikan** kepada pihak lain (pengesah) **bahawa sesuatu itu benar, tanpa mendedahkan sebarang maklumat** selain daripada hakikat bahawa kenyataan khusus ini adalah benar.
 
