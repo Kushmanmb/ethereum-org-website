@@ -192,11 +192,61 @@ The `.wait()` method is crucial - it ensures your code waits for the transaction
 
 ### Example: Custom contract methods {#custom-contract-methods-ethers}
 
-You can call any contract method the same way. For example, if you have a contract with a custom `updateProfile` function:
+You can call any contract method the same way. For example, consider this `SimpleProfile` contract that stores an ENS name and display name for each user:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.1;
+
+contract SimpleProfile {
+    struct Profile {
+        string ensName;
+        string displayName;
+    }
+
+    mapping (address => Profile) public profiles;
+
+    event ProfileUpdated(address indexed user, string ensName, string displayName);
+
+    function updateProfile(string memory ensName, string memory displayName) public {
+        profiles[msg.sender] = Profile(ensName, displayName);
+        emit ProfileUpdated(msg.sender, ensName, displayName);
+    }
+
+    function getProfile(address user) public view returns (string memory ensName, string memory displayName) {
+        Profile storage profile = profiles[user];
+        return (profile.ensName, profile.displayName);
+    }
+}
+```
+
+To call `updateProfile` from JavaScript, define the ABI for the functions you need and create a contract instance:
 
 ```js
-// Assuming you have a contract with an updateProfile method
-const contract = new ethers.Contract(address, abi, signer)
+const SimpleProfileABI = [
+  {
+    inputs: [
+      { name: "ensName", type: "string" },
+      { name: "displayName", type: "string" },
+    ],
+    name: "updateProfile",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ name: "user", type: "address" }],
+    name: "getProfile",
+    outputs: [
+      { name: "ensName", type: "string" },
+      { name: "displayName", type: "string" },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+]
+
+const contract = new ethers.Contract(address, SimpleProfileABI, signer)
 
 // Call the method with parameters
 const tx = await contract.updateProfile("kushmanmb.eth", "Matthew Brace")
@@ -205,6 +255,10 @@ const tx = await contract.updateProfile("kushmanmb.eth", "Matthew Brace")
 await tx.wait()
 
 console.log("Profile updated successfully!")
+
+// Read back the profile (no transaction needed for view functions)
+const [ensName, displayName] = await contract.getProfile(signer.address)
+console.log(`ENS name: ${ensName}, Display name: ${displayName}`)
 ```
 
 This pattern works for any contract method that modifies state - just call the method on the contract instance, then use `.wait()` to ensure the transaction is confirmed on the blockchain.
