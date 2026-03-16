@@ -8,7 +8,7 @@ lang: tl
 
 Ang zero-knowledge proof ay isang paraan para patunayan ang validity ng isang pahayag nang hindi ipinapakita ang mismong pahayag. Ang ‘prover’ ang partidong sumusubok na patunayan ang isang pahayag, samantalang ang ‘verifier’ ang responsable sa pag-validate ng claim.
 
-Ang mga zero-knowledge proof ay unang lumitaw sa isang artikulo noong 1985 na, “[ "Ang knowledge complexity ng mga interactive proof system](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)” na nagbibigay ng pagpapakahulugan ng mga zero-knowledge proof na malawakang ginagamit ngayon:
+Ang mga zero-knowledge proof ay unang lumitaw sa isang artikulo noong 1985 na, “[ "Ang knowledge complexity ng mga interactive proof system](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)” na nagbibigay ng pagpapakahulugan ng mga zero-knowledge proof na malawakang ginagamit ngayon:
 
 > Ang zero-knowledge na protokol ay isang pamamaraan kung saan ang isang tao (ang prover) **ay maaring magpatunay**sa isa pang tao (ang verifier) **na isang bagay ay totoo, nang hindi inilalantad ang anumang impormasyon** maliban sa katotohanan na ang partikular na pahayag na ito ay totoo.
 

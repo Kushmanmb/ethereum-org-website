@@ -8,7 +8,7 @@ lang: pcm
 
 Zero-knowlej prufs na one way to dey pruf di validity of one statement witout showin di statement imsef. Di 'prova' na di party wey dey try to pruf one point, as di 'verifaya' dey responsibol to dey validate di point.
 
-Zero-knowlej prufs first show face for 1985 paper, "[Di knowlej komplexity of interaktiv pruf systems](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)" wey dey provide one definishon of zero-knowledge prufs wey dem too dey yus tuday:
+Zero-knowlej prufs first show face for 1985 paper, "[Di knowlej komplexity of interaktiv pruf systems](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)" wey dey provide one definishon of zero-knowledge prufs wey dem too dey yus tuday:
 
 > Zero-knowlej protokol na one metod by wich one party (di prova) **fit pruf** to anoda party (di verifaya) **sey somtin dey true, witout showin any info** apart from di fact dat dis spesifik statement dey true.
 

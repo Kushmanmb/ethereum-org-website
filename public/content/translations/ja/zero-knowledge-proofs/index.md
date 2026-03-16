@@ -8,7 +8,7 @@ lang: ja
 
 ゼロ知識証明は、証明したい主張そのものを明らかにすることなく、主張の妥当性を証明する方法です。 主張を証明しようとする側を「証明者」とよび、主張の検証に責任を持つ側を「検証者」とよびます。
 
-ゼロ知識証明は、『[The knowledge complexity of interactive proof systems](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)』と題された1985年の論文に初めて掲載されました。この論文では、今日広く使用されているゼロ知識証明の定義を提供しています。
+ゼロ知識証明は、『[The knowledge complexity of interactive proof systems](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)』と題された1985年の論文に初めて掲載されました。この論文では、今日広く使用されているゼロ知識証明の定義を提供しています。
 
 > ゼロ知識証明プロトコルは、一方(証明者)がもう一方(検証者)に対してある事柄が**正しいことを証明する手法**で、**主張が真であるということ以外には何の情報も伝えません**。
 

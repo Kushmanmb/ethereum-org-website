@@ -8,7 +8,7 @@ lang: es
 
 Una prueba de conocimiento cero es una forma de probar la validez de una sentencia sin revelar la sentencia en sí. El "probador" (también conocido como tirador de pruebas) es la parte que intenta probar o demostrar una afirmación, mientras que el "verificador" es el responsable de validarla.
 
-Las pruebas de conocimiento cero aparecieron por primera vez en el paper de 1985 “[The knowledge complexity of interactive proof systems](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)” (La complejidad del conocimiento de los sistemas de prueba interactivos), que proporciona una definición de las pruebas de conocimiento cero ampliamente utilizadas hoy en día:
+Las pruebas de conocimiento cero aparecieron por primera vez en el paper de 1985 “[The knowledge complexity of interactive proof systems](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)” (La complejidad del conocimiento de los sistemas de prueba interactivos), que proporciona una definición de las pruebas de conocimiento cero ampliamente utilizadas hoy en día:
 
 > Un protocolo de conocimiento cero es un método por el cual una parte (el probador) **puede probar** a otra parte (el verificador) **que algo es cierto, sin revelar ninguna información** aparte del hecho de que esta afirmación específica es verdadera.
 

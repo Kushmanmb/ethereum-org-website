@@ -8,7 +8,7 @@ lang: de
 
 Ein Null-Wissen-Beweis ist eine Methode, um die Gültigkeit einer Aussage zu beweisen, ohne die Aussage selbst offenzulegen. Der „Beweisanführer“ ist die Partei, die versucht, eine Aussage zu beweisen, während der „Verifizierer“ für die Validierung der Aussage verantwortlich ist.
 
-Null-Wissen-Beweise erschienen erstmals 1985 in einem Artikel, „[Die Wissenskomplexität von Interactive Proof Systems](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)“, der eine Definition der heute weit verbreiteten Null-Wissen-Beweise enthält:
+Null-Wissen-Beweise erschienen erstmals 1985 in einem Artikel, „[Die Wissenskomplexität von Interactive Proof Systems](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)“, der eine Definition der heute weit verbreiteten Null-Wissen-Beweise enthält:
 
 > Ein Null-Wissen-Protokoll ist eine Methode, bei der eine Partei (der Beweisführer) einer anderen Partei (dem Prüfer) **beweisen kann**, **dass etwas wahr ist, ohne dabei irgendwelche Informationen preiszugeben**, außer der Tatsache, dass diese spezifische Aussage wahr ist.
 

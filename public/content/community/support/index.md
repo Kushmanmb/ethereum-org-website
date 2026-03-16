@@ -72,7 +72,7 @@ Here are some popular examples:
 - [ethers.js](https://discord.gg/6jyGVDK6Jx)
 - [web3.js](https://discord.gg/GsABYQu4sC)
 - [Hardhat](https://discord.gg/xtrMGhmbfZ)
-- [Alchemy](http://alchemy.com/discord)
+- [Alchemy](https://alchemy.com/discord)
 - [Tenderly](https://discord.gg/fBvDJYR)
 
 ## Running a node {#node-support}

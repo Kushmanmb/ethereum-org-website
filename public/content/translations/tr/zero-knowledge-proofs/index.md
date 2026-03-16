@@ -8,7 +8,7 @@ lang: tr
 
 Sıfır bilgili ispat, ifadenin kendisini açığa çıkarmadan bir ifadenin geçerliliğini kanıtlamanın bir yoludur. "Kanıtlayıcı", bir iddiayı kanıtlamaya çalışan taraftır, "doğrulayıcı" ise iddiayı doğrulamaktan sorumludur.
 
-Sıfır bilgili ispatlardan, yaygın güncel tanımıyla birlikte ilk kez 1985 yılında yayınlanan "[İnteraktif kanıt sistemlerinde bilgi karmaşıklığı](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)" başlıklı çalışmada bahsedilmiştir:
+Sıfır bilgili ispatlardan, yaygın güncel tanımıyla birlikte ilk kez 1985 yılında yayınlanan "[İnteraktif kanıt sistemlerinde bilgi karmaşıklığı](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)" başlıklı çalışmada bahsedilmiştir:
 
 > Sıfır bilgi protokolü, bir tarafın (kanıtlayıcı) diğer bir tarafa (doğrulayıcı) bir şeyin **doğru olduğunu, bilginin doğruluğu dışında herhangi bir bilgi vermeden** **kanıtlayabildiği bir protokoldür**.
 

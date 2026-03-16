@@ -8,7 +8,7 @@ lang: hu
 
 A zero-knowledge bizonyíték annak módja, hogy egy állítás érvényességét úgy igazoljuk, hogy magát az állítást nem fedjük fel. A bizonyító próbálja az állítást elfogadtatni, miközben az ellenőrző felelős annak validálásáért.
 
-A zero-knowledge bizonyíték először egy 1985-ös, „[Az interaktív bizonyítási rendszerek ismereti komplexitása](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)” című tanulmányban jelent meg, mely a zero-knowledge bizonyítékok ma is használt definícióját adja:
+A zero-knowledge bizonyíték először egy 1985-ös, „[Az interaktív bizonyítási rendszerek ismereti komplexitása](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)” című tanulmányban jelent meg, mely a zero-knowledge bizonyítékok ma is használt definícióját adja:
 
 > A nulla tudás protokoll egy olyan módszer, amellyel az egyik fél (a bizonyító) **bizonyíthatja** egy másik félnek (az ellenőrző), **hogy valami igaz, anélkül, hogy bármilyen információt felfedne** az a tény, hogy ez a konkrét állítás igaz.
 

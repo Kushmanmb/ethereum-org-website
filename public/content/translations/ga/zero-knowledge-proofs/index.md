@@ -8,7 +8,7 @@ lang: ga
 
 Is bealach é cruthúnas nial-eolais chun bailíocht ráitis a chruthú gan an ráiteas féin a nochtadh. Is é an promhadóir (nó ‘prover’) an páirtí atá ag iarraidh éileamh a chruthú, agus is é an ‘fíoraitheoir’ atá freagrach as an éileamh a bhailíochtú.
 
-Léiríodh cruthúnais nial-eolais ar dtús i bpáipéar 1985, “[Castacht an eolais i gcórais cruthúnais idirghníomhacha](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)” ina sholáthraítear sainmhíniú ar cruthúnais nial-eolais a úsáidtear go forleathan inniu:
+Léiríodh cruthúnais nial-eolais ar dtús i bpáipéar 1985, “[Castacht an eolais i gcórais cruthúnais idirghníomhacha](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)” ina sholáthraítear sainmhíniú ar cruthúnais nial-eolais a úsáidtear go forleathan inniu:
 
 > Is modh é prótacal nial-eolais trína bhféadfaidh páirtí amháin (an promhadóir) **a chruthú** do pháirtí eile (an fíoraitheoir) **go bhfuil rud éigin fíor, gan aon fhaisnéis a nochtadh** seachas go bhfuil an ráiteas sonrach seo fíor.
 

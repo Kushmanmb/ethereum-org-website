@@ -8,7 +8,7 @@ lang: it
 
 Una prova a conoscenza zero è un modo per provare la validità di una dichiarazione senza rivelarla. Il 'dimostratore' è la parte che tenta di provare una rivendicazione, mentre il 'validatore' è responsabile della sua convalida.
 
-Le prove a conoscenza zero sono apparse per la prima volta in un documento del 1985, "[La complessità di conoscenza dei sistemi di prova interattiva](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)", che fornisce una definizione delle prove a conoscenza zero, ampiamente utilizzata oggi:
+Le prove a conoscenza zero sono apparse per la prima volta in un documento del 1985, "[La complessità di conoscenza dei sistemi di prova interattiva](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)", che fornisce una definizione delle prove a conoscenza zero, ampiamente utilizzata oggi:
 
 > Un protocollo a conoscenza zero è un metodo tramite cui una parte (il dimostratore) **può provare** a un'altra parte (il verificatore) **che qualcosa è vero, senza rivelare alcuna informazione** tranne il fatto che tale specifica istruzione sia vera.
 

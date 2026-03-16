@@ -8,7 +8,7 @@ lang: zh-tw
 
 零知識證明能證明某陳述有效、卻又無需揭示陳述本身。 「證明者」是試圖證明主張的一方，「驗證者」則負責驗證該主張。
 
-零知識證明最早出現在 1985 年的論文：「[互動證明系統的知識複雜度](http://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)」，其定義了今日廣為使用的零知識證明：
+零知識證明最早出現在 1985 年的論文：「[互動證明系統的知識複雜度](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Proof%20Systems/The_Knowledge_Complexity_Of_Interactive_Proof_Systems.pdf)」，其定義了今日廣為使用的零知識證明：
 
 > 藉由零知識協定，一方（證明者）能向另一方（驗證者）**證明****某事為真，且除了揭露這項陳述屬實之外，不需揭露其他資訊**。
 
