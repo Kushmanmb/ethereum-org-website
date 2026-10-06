@@ -41,6 +41,10 @@ A non-profit organization, funded initially by the crowdsale of ETH, dedicated t
 
 A public, open-source website and educational resource for the Ethereum community. ethereum.org is led by a small core team, funded by the Ethereum Foundation, with contributions from thousands of community members across the globe.
 
+#### Stewardship and responsibility {#stewardship-and-responsibility}
+
+The stewardship of ethereum.org is distinct from Ethereum itself. ethereum.org is an open-source website maintained by its core team and community contributors, with funding from the Ethereum Foundation. Ethereum is a decentralized, open-source protocol and network; maintaining ethereum.org does not confer ownership or control over Ethereum.
+
 This page covers more information about ethereum.org.
 
 ## Our mission {#our-mission}
